@@ -1,4 +1,3 @@
-/* Reset и базовые стили */
 * {
 	margin: 0;
 	padding: 0;
@@ -19,7 +18,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Контейнер с glassmorphism */
 .wrapper {
 	width: 100%;
 	max-width: 600px;
@@ -35,7 +33,6 @@ body {
 	transform: translateY(20px);
 }
 
-/* Анимация появления */
 @keyframes fadeInUp {
 	to {
 		opacity: 1;
@@ -43,7 +40,6 @@ body {
 	}
 }
 
-/* Заголовки */
 .main__header_title {
 	font-size: 2.6rem;
 	font-weight: 700;
@@ -60,7 +56,6 @@ body {
 	text-shadow: 0 1px 4px rgba(255, 255, 255, 0.08);
 }
 
-/* Инпуты и селекты - единый стиль */
 .mainInput,
 .mainInputRange,
 select {
@@ -80,7 +75,6 @@ select {
 	appearance: none;
 }
 
-/* Убираем стрелки в number input */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
 	-webkit-appearance: none;
@@ -90,7 +84,6 @@ input[type='number'] {
 	-moz-appearance: textfield;
 }
 
-/* Range input стиль */
 .mainInputRange {
 	-webkit-appearance: none;
 	appearance: none;
@@ -112,7 +105,7 @@ input[type='number'] {
 	cursor: pointer;
 	box-shadow: 0 0 10px #6f7fffaa;
 	transition: background-color 0.3s ease;
-	margin-top: -8px; /* чтобы выровнять с треком */
+	margin-top: -8px;
 }
 .mainInputRange::-webkit-slider-thumb:hover {
 	background-color: #8b94ff;
@@ -133,7 +126,6 @@ input[type='number'] {
 	box-shadow: 0 0 16px #8b94ffcc;
 }
 
-/* Плавные hover и focus */
 .mainInput:focus,
 select:focus {
 	outline: none;
@@ -151,13 +143,11 @@ select:hover,
 	transform: scale(1.01);
 }
 
-/* option стилизация (не во всех браузерах работает) */
 option {
 	background-color: #1c1c1c;
 	color: #ddd;
 }
 
-/* Кнопка */
 .total {
 	width: 100%;
 	padding: 16px 0;
@@ -183,7 +173,6 @@ option {
 	box-shadow: 0 6px 12px rgba(111, 127, 255, 0.5), inset 0 -2px 8px #283073;
 }
 
-/* Результаты */
 .totalPrice__text {
 	margin-top: 14px;
 	padding: 14px 18px;
@@ -198,7 +187,6 @@ option {
 	transition: background 0.3s ease;
 }
 
-/* Разделитель */
 hr {
 	border: none;
 	height: 1px;
@@ -207,7 +195,6 @@ hr {
 	border-radius: 1px;
 }
 
-/* Адаптив */
 @media (max-width: 480px) {
 	.wrapper {
 		padding: 25px 20px;
