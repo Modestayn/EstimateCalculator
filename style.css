@@ -1,0 +1,224 @@
+/* Reset и базовые стили */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+	color: #e1e1e1;
+	padding: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Контейнер с glassmorphism */
+.wrapper {
+	width: 100%;
+	max-width: 600px;
+	padding: 30px 40px;
+	border-radius: 24px;
+	background: rgba(30, 30, 30, 0.5);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8),
+		inset 0 0 30px rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	animation: fadeInUp 0.8s ease forwards;
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Заголовки */
+.main__header_title {
+	font-size: 2.6rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 30px;
+	color: #f0f0f0;
+	text-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.header__block h2 {
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: #ddd;
+	text-shadow: 0 1px 4px rgba(255, 255, 255, 0.08);
+}
+
+/* Инпуты и селекты - единый стиль */
+.mainInput,
+.mainInputRange,
+select {
+	width: 100%;
+	padding: 14px 18px;
+	margin-bottom: 20px;
+	border-radius: 14px;
+	border: none;
+	background: rgba(255, 255, 255, 0.07);
+	color: #eee;
+	font-size: 1.1rem;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease,
+		transform 0.15s ease;
+	box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* Убираем стрелки в number input */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+/* Range input стиль */
+.mainInputRange {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 8px;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.15);
+	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+.mainInputRange::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 24px;
+	height: 24px;
+	background: #6f7fff;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0 10px #6f7fffaa;
+	transition: background-color 0.3s ease;
+	margin-top: -8px; /* чтобы выровнять с треком */
+}
+.mainInputRange::-webkit-slider-thumb:hover {
+	background-color: #8b94ff;
+	box-shadow: 0 0 16px #8b94ffcc;
+}
+
+.mainInputRange::-moz-range-thumb {
+	width: 24px;
+	height: 24px;
+	background: #6f7fff;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0 10px #6f7fffaa;
+	transition: background-color 0.3s ease;
+}
+.mainInputRange::-moz-range-thumb:hover {
+	background-color: #8b94ff;
+	box-shadow: 0 0 16px #8b94ffcc;
+}
+
+/* Плавные hover и focus */
+.mainInput:focus,
+select:focus {
+	outline: none;
+	background-color: rgba(111, 127, 255, 0.15);
+	box-shadow: 0 0 20px #6f7fffaa;
+	color: #fff;
+	transform: scale(1.02);
+}
+
+select:hover,
+.mainInput:hover {
+	background-color: rgba(111, 127, 255, 0.1);
+	box-shadow: 0 0 16px #6f7fff88;
+	color: #fff;
+	transform: scale(1.01);
+}
+
+/* option стилизация (не во всех браузерах работает) */
+option {
+	background-color: #1c1c1c;
+	color: #ddd;
+}
+
+/* Кнопка */
+.total {
+	width: 100%;
+	padding: 16px 0;
+	background: linear-gradient(145deg, #6f7fff, #5968f0);
+	border-radius: 16px;
+	border: none;
+	color: white;
+	font-weight: 700;
+	font-size: 1.25rem;
+	cursor: pointer;
+	/* box-shadow: 0 8px 15px rgba(111, 127, 255, 0.6), inset 0 -3px 10px #2d35a0; */
+	transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+.total:hover {
+	background: linear-gradient(145deg, #8b94ff, #7583f7);
+	/* box-shadow: 0 10px 20px rgba(139, 148, 255, 0.8), inset 0 -4px 12px #3a42c3; */
+	transform: translateY(-3px);
+}
+
+.total:active {
+	transform: scale(0.95);
+	box-shadow: 0 6px 12px rgba(111, 127, 255, 0.5), inset 0 -2px 8px #283073;
+}
+
+/* Результаты */
+.totalPrice__text {
+	margin-top: 14px;
+	padding: 14px 18px;
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 16px;
+	color: #cfd2ff;
+	font-weight: 600;
+	font-size: 1.1rem;
+	box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+	text-shadow: 0 1px 1px #00000040;
+	user-select: none;
+	transition: background 0.3s ease;
+}
+
+/* Разделитель */
+hr {
+	border: none;
+	height: 1px;
+	margin: 30px 0;
+	background: rgba(111, 127, 255, 0.25);
+	border-radius: 1px;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+	.wrapper {
+		padding: 25px 20px;
+	}
+	.main__header_title {
+		font-size: 2rem;
+	}
+	.total {
+		font-size: 1.1rem;
+	}
+	.totalPrice__text {
+		font-size: 1rem;
+	}
+}

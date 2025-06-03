@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Estimate Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="main">
+				<h1 class="main__header_title">Estimate Calculator</h1>
+			</div>
+			<div class="header__block">
+				<h2>Object Area</h2>
+
+				<label>
+					<input
+						type="number"
+						id="totalArea"
+						class="mainInput"
+						placeholder="m²"
+						min="0"
+						max="1000"
+					/>
+				</label>
+				<label>
+					<input
+						type="range"
+						id="totalAreaRange"
+						class="mainInputRange"
+						min="0"
+						max="1000"
+					/>
+				</label>
+
+				<!-- Selects -->
+				<select class="box" id="repair">
+					<option disabled selected>Select Repair Type</option>
+					<option value="500,400">Economy</option>
+					<option value="800,600">Luxury</option>
+					<option value="1800,1600">Premium</option>
+				</select>
+
+				<select class="box" id="building">
+					<option disabled selected>Select Building Type</option>
+					<option value="500,400">Economy</option>
+					<option value="800,600">Luxury</option>
+					<option value="1800,1600">Premium</option>
+				</select>
+
+				<select class="box" id="room">
+					<option disabled selected>Select Room Type</option>
+					<option value="500,400">Economy</option>
+					<option value="800,600">Luxury</option>
+					<option value="1800,1600">Premium</option>
+				</select>
+
+				<hr />
+				<button class="total">Calculate Cost</button>
+
+				<div class="totalPrice__text work-price"></div>
+				<div class="totalPrice__text material-price"></div>
+				<div class="totalPrice__text total-price"></div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
